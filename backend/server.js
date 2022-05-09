@@ -1,13 +1,15 @@
-require('dotenv').config()
-const express = require('express');
-const cors = require('cors');
-const data = require('./data.js');
+import {config} from 'dotenv';
+import express from 'express';
+import cors from 'cors';
+import data from './data.js';
 
 const app = express();
 app.use(cors())
 
+console.log(data.products);
 
 app.get('/api/products', (req, res)=> {
+  console.log(data)
   res.send(data.products);
 });
 
