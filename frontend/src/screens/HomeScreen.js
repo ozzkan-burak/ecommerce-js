@@ -1,41 +1,33 @@
-import axios from 'axios';
+import axios from "axios";
+
+//import Rating from "../components/Rating";
+//import { hideLoading, showLoading } from "../utils";
 
 const HomeScreen = {
   render: async () => {
-    const response = await axios({
-      url:'http://localhost:5100/api/products',
+    //showLoading();
+    const res = await axios({
+      url: "http://localhost:5001/api/products",
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type' : 'application/json',
       },
     });
-
-    if(!response || !response.statusText !== 'OK' || !response.data) {
-      return '<p>Something went wrong</p>';
+    //hideLoading();
+    if(!res || res.statusText !== 'OK') {
+      return `<div>Data alınırken hata oluştu</div>`;
     };
 
-    const produxt = response.data;
+    const products = res.data;
 
     return `
-      <ul class="products">
-        ${products.map((product) => {
-            return `
-            <li>
-              <div class="product">
-                <a href="/#/product/${product._id}">
-                  <img src="${product.image}" alt="${product.name}">
-                  <div class="product-name">${product.name}</div>
-                  <div class="product-brand">${product.brand}</div>
-                  <div class="product-price">${product.price}</div>
-                  <div class="product-rating">${product.rating}</div>
-                </a>
-              </div>
-            </li>
-          `;
-          })
-          .join("\n")}
+      <ul class="product-list">
+        ${products.map(product => `
+          <li>
+            TEST
+          </li>
+        `).join('\n')}
       </ul>
-    `;
-  },
-};
-
+    `
+  }
+}
 export default HomeScreen;

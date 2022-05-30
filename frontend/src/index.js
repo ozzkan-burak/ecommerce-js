@@ -10,15 +10,11 @@ const routes = {
 
 const router = () => {
   const request = parseRequestUrl();
-  const parseUrl = 
-  (request.resource ? `/${request.resource}` : '/') + 
+  const parseUrl = (request.resource ? `/${request.resource}` : '/') + 
   (request.id ? '/:id' : '') + 
   (request.verb ? `/${request.verb}` : '');
 
-  console.log(routes[parseUrl]);
-
   const screen = routes[parseUrl] ? routes[parseUrl] : Error404Screen;
-  console.log(screen)
 
   const main = document.getElementById('main-container');
   main.innerHTML = screen.render();
