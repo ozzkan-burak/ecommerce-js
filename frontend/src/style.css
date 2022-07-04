@@ -52,3 +52,22 @@ footer {
   align-items: center;
   color: white;
 }
+
+/* PRODUCTS */
+
+.products {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.products li {
+  flex: 0 1 30rem;
+  margin: 1rem;
+  margin-bottom: 0;
+  height: 42rem;
+  border-top: 0.2rem #e0e0e0 solid;
+}
