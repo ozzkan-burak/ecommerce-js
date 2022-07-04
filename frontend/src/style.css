@@ -44,3 +44,11 @@ header a:hover {
 .brand a {
   font-size: 3rem;
 }
+
+footer {
+  background-color:orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
