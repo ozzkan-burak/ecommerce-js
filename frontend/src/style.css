@@ -10,6 +10,14 @@ body {
   font: 1.6rem Helvetice, Arial, sans-serif;
   margin:0px;
 }
+ a {
+  text-decoration: none;
+  transition: all .4s;
+  color: black;
+ }
+ a:hover {
+  color: orange;
+ }
 
 .grid-container {
   display : grid;
@@ -70,4 +78,30 @@ footer {
   margin-bottom: 0;
   height: 42rem;
   border-top: 0.2rem #e0e0e0 solid;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.product img {
+  max-height: 26rem;
+  max-width: 22rem;
+  margin-top: 2rem;
+}
+
+.product-name {
+  line-height: 2.2rem;
+}
+
+.product-brand {
+  font-size: 1.2rem;
+  color:#808080
+}
+
+.product-price {
+  font-size: 2rem;
 }
