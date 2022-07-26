@@ -4,7 +4,6 @@ import data from '../data.js';
 
 const HomeScreen =  {
   render: () => {
-    console.log('TEST');
     const { products } = data;
     return `
       <ul class="products">
