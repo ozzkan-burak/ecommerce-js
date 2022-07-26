@@ -1,7 +1,11 @@
 import HomeScreen from './screens/HomeScreen.js';
 
+const routes = {
+  '/': HomeScreen,
+  '/product/:id': ProductScreen,
+}
+
 const router = () => {
-  console.log('ASD');
   const main = document.getElementById("main-container");
   main.innerHTML = HomeScreen.render();
 };
