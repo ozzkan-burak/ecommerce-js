@@ -1,0 +1,24 @@
+{
+  "name": "ecommerce-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start":"node backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ozzkan-burak/ecommerce-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ozzkan-burak/ecommerce-js/issues"
+  },
+  "homepage": "https://github.com/ozzkan-burak/ecommerce-js#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
