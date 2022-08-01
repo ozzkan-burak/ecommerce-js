@@ -1,6 +1,6 @@
 //import data "../data.js";
 //const data = require("../data.js");
-import data from '../data.js';
+import data from '../../../backend/data.js';
 
 const HomeScreen =  {
   render: () => {
