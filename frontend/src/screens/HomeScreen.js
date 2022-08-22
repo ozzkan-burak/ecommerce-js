@@ -1,14 +1,27 @@
 //import data "../data.js";
 //const data = require("../data.js");
-import data from '../../../backend/data.js';
+//import data from '../../../backend/data.js';
 
 const HomeScreen =  {
-  render: () => {
-    const { products } = data;
+  render: async () => {
+    //const { products } = data;
+    const response = await fetch("http://localhost:5000/api/products", {
+      headers: {
+        "Content-Type":"application/json",
+      }
+    });
+
+    if(!response || !response.ok){
+      return `<div>Error in getting data</div>`
+    }
+
+    const products = await response.json();
+    console.log(products);
+    
     return `
       <ul class="products">
         ${products.map(
-          (product) => `
+            (product) => `
              <li>
               <div class="product">
                 <a href="/#/product/1">
@@ -28,7 +41,8 @@ const HomeScreen =  {
               </div>
             </li>
           `
-        ).join('')}
+          )
+          .join("")}
       </ul>
     `;
   }
