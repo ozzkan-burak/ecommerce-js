@@ -16,7 +16,6 @@ const HomeScreen =  {
     }
 
     const products = await response.json();
-    console.log(products);
     
     return `
       <ul class="products">
