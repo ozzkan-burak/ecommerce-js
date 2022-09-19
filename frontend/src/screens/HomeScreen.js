@@ -1,21 +1,26 @@
 //import data "../data.js";
 //const data = require("../data.js");
 //import data from '../../../backend/data.js';
+import axios from 'axios';
+import {config} from '../config'
+
+const {DEV_BASE_URL} = config;
 
 const HomeScreen =  {
   render: async () => {
     //const { products } = data;
-    const response = await fetch("http://localhost:5000/api/products", {
+    const response = await axios({
+      url:`${DEV_BASE_URL}api/products`,
       headers: {
         "Content-Type":"application/json",
       }
     });
-
-    if(!response || !response.ok){
+    debugger;
+    if(!response || response.statusText !== 'OK'){
       return `<div>Error in getting data</div>`
     }
 
-    const products = await response.json();
+    const products = await response.data;
     
     return `
       <ul class="products">
