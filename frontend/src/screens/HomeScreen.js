@@ -2,6 +2,7 @@
 //const data = require("../data.js");
 //import data from '../../../backend/data.js';
 import axios from 'axios';
+import Rating from '../components/Rating';
 import {config} from '../config'
 
 const {DEV_BASE_URL} = config;
@@ -35,6 +36,12 @@ const HomeScreen =  {
                   <a href="/#/product/${product._id}">
                     ${product.name}
                   </a>
+                </div>
+                <div class="product-rating">
+                  ${Rating.render({
+                    value: product.rating,
+                    text: `${products.numReviews} reviews`
+                  })}
                 </div>
                 <div class="product-brand">
                   ${product.brand}
